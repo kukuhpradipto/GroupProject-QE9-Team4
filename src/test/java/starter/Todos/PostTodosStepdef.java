@@ -8,6 +8,9 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.TodosAPI;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import starter.UtilsTodos.ConstantTodos;
+import starter.UtilsTodos.TodosReponses;
+
 import java.io.File;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -18,7 +21,7 @@ public class PostTodosStepdef {
 
     @Given("Post create new user with valid json file")
     public void postCreateNewUserWithValidJsonFile() {
-        File jsonReq = new File(TodosAPI.DIR + "/src/test/resources/JSON/ReqBody/Todos/PostCreateTodos/PostCreateValidJson.json");
+        File jsonReq = new File(ConstantTodos.JSON_REQUEST_POST + "/PostCreateValidJson.json");
         todosAPI.setPostCreateTodos(jsonReq);
     }
 
@@ -35,18 +38,18 @@ public class PostTodosStepdef {
     @And("Response body should be userId is {int}")
     public void resposeBodyShouldBeUserIdIsAndCompetedIsFalse(int userId) {
         SerenityRest.then()
-                .body("userId", equalTo(userId));
+                .body(TodosReponses.USER_ID, equalTo(userId));
     }
 
     @And("Validator post create user json schema")
     public void validatorPostCreateUserJsonSchema() {
-        File jsonSchema = new File(TodosAPI.DIR + "/src/test/resources/JSON/JSONSchema/Todos/PostJsonSchemaTodos/PostValidParameterJSONSchema.json");
+        File jsonSchema = new File(ConstantTodos.JSON_SCHEMA_POST + "/PostValidParameterJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
     @Given("Post create new user with invalid json")
     public void postCreateNewUserWithInvalidJsonFile() {
-        File jsonReq = new File(TodosAPI.DIR + "/src/test/resources/JSON/ReqBody/Todos/PostCreateTodos/PostCreateInvalidJson.json");
+        File jsonReq = new File(ConstantTodos.JSON_REQUEST_POST+ "/PostCreateInvalidJson.json");
         todosAPI.setPostCreateTodos(jsonReq);
     }
 
@@ -58,25 +61,25 @@ public class PostTodosStepdef {
 
     @Given("Post data with file json user id  body request is empty")
     public void postDataWithFileJsonUserIdBodyRequestIsEmpty() {
-        File jsonReq = new File(TodosAPI.DIR + "/src/test/resources/JSON/ReqBody/Todos/PostCreateTodos/PostCreateUserIdEmpty.json");
+        File jsonReq = new File(ConstantTodos.JSON_REQUEST_POST + "/PostCreateUserIdEmpty.json");
         todosAPI.setPostCreateTodos(jsonReq);
     }
 
     @Given("Post data with file json title body request is empty")
     public void postDataWithFileJsonTitleBodyRequestIsEmpty() {
-        File jsonReq = new File(TodosAPI.DIR + "/src/test/resources/JSON/ReqBody/Todos/PostCreateTodos/PostCreateTitleEmpty.json");
+        File jsonReq = new File(ConstantTodos.JSON_REQUEST_POST + "/PostCreateTitleEmpty.json");
         todosAPI.setPostCreateTodos(jsonReq);
     }
 
     @Given("Post data with file json completed body request is empty")
     public void postDataWithFileJsonCompletedBodyRequestIsEmpty() {
-        File jsonReq = new File(TodosAPI.DIR + "/src/test/resources/JSON/ReqBody/Todos/PostCreateTodos/PostCreateCompletedEmpty.json");
+        File jsonReq = new File(ConstantTodos.JSON_REQUEST_POST + "/PostCreateCompletedEmpty.json");
         todosAPI.setPostCreateTodos(jsonReq);
     }
 
     @Given("Post data with file json body request is empty")
     public void postDataWithFileJsonBodyRequestIsEmpty() {
-        File jsonReq = new File(TodosAPI.DIR + "/src/test/resources/JSON/ReqBody/Todos/PostCreateTodos/PostCreateWithoutBodyRequest.json");
+        File jsonReq = new File(ConstantTodos.JSON_REQUEST_POST + "/PostCreateWithoutBodyRequest.json");
         todosAPI.setPostCreateTodos(jsonReq);
     }
 }

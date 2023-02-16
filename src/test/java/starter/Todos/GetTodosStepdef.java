@@ -8,6 +8,8 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.TodosAPI;
+import starter.UtilsTodos.ConstantTodos;
+import starter.UtilsTodos.TodosReponses;
 
 import java.io.File;
 
@@ -36,13 +38,13 @@ public class GetTodosStepdef {
     @And("Response body should be id {int} and userId {int}")
     public void responseBodyShouldBeIdAndUserId(int id, int userId) {
         SerenityRest.then()
-                .body("id", equalTo(id))
-                .body("userId", equalTo(userId));
+                .body(TodosReponses.ID, equalTo(id))
+                .body(TodosReponses.USER_ID, equalTo(userId));
     }
 
     @And("Validator get user json schema with valid parameter id")
     public void validatorGetUserJsonSchemaWitValidParameterId() {
-        File jsonSchema = new File(TodosAPI.DIR + "/src/test/resources/JSON/JSONSchema/Todos/GetJsonSchemaTodos/GetValidParameterJSONSchema.json");
+        File jsonSchema = new File(ConstantTodos.JSON_SCHEMA_GET + "/GetValidParameterJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 
@@ -85,7 +87,7 @@ public class GetTodosStepdef {
 
     @And("Validator get user json schema without parameter id")
     public void validatorGetUserJsonSchemaWithoutParameterId() {
-        File jsonSchema = new File(TodosAPI.DIR + "/src/test/resources/JSON/JSONSchema/Todos/GetJsonSchemaTodos/GetWithoutdParameterJSONSchema.json");
+        File jsonSchema = new File(ConstantTodos.JSON_SCHEMA_GET + "/GetWithoutdParameterJSONSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 }

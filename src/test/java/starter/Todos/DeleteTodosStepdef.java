@@ -8,6 +8,8 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.TodosAPI;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import starter.UtilsTodos.ConstantTodos;
+
 import java.io.File;
 
 public class DeleteTodosStepdef {
@@ -32,7 +34,7 @@ public class DeleteTodosStepdef {
 
     @And("Validate delete json schema valid json")
     public void validateDeleteJsonSchemaValidJson() {
-        File jsonSchema = new File(TodosAPI.DIR + "/src/test/resources/JSON/JSONSchema/Todos/DeleteJsonSchemaTodos/DeleteValidIdJSONSchema.json");
+        File jsonSchema = new File(ConstantTodos.JSON_SCHEMA_DELETE + "/DeleteValidIdJSONSchema.json");
         SerenityRest.then().assertThat().body((JsonSchemaValidator.matchesJsonSchema(jsonSchema)));
 
     }
