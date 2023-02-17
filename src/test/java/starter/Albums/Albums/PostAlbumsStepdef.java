@@ -1,4 +1,4 @@
-package starter.Albums;
+package starter.Albums.Albums;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -10,7 +10,6 @@ import net.thucydides.core.annotations.Steps;
 import starter.UtilsAlbums.AlbumsAPI;
 import starter.UtilsAlbums.AlbumsResponses;
 import starter.UtilsAlbums.ConstantAlbums;
-import starter.UtilsTodos.ConstantTodos;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import java.io.File;
@@ -33,11 +32,6 @@ public class PostAlbumsStepdef {
         SerenityRest.when().post(AlbumsAPI.POST_CREATE_ALBUMS);
     }
 
-//    @Then("Response status code should be {int} Created")
-//    public void responseStatusCodeShouldBeCreated(int created) {
-//        SerenityRest.then().statusCode(created);
-//    }
-
     @And("Response body should be userId is {int} and title {string}")
     public void responseBodyShouldBeUserIdIsAndTitle(int userId, String title) {
         SerenityRest.then()
@@ -57,11 +51,6 @@ public class PostAlbumsStepdef {
         File jsonReq = new File(ConstantAlbums.JSON_REQUEST_POST+ "/PostCreateInvalidJSON.json");
         albumsAPI.postCreateAlbums(jsonReq);
     }
-
-//    @Then("Response status code should be {int} Bad Request")
-//    public void responseStatusCodeShouldBeBadRequest(int badRequest) {
-//        SerenityRest.then().statusCode(badRequest);
-//    }
 
     //Scenario 3 Post with 1 param
     @Given("Post create album with one parameter only")

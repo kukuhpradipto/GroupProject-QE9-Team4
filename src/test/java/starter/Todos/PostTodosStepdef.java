@@ -53,12 +53,6 @@ public class PostTodosStepdef {
         todosAPI.setPostCreateTodos(jsonReq);
     }
 
-
-//    @Then("Response status code should be {int} Bad Request")
-//    public void responseStatusCodeShouldBeBadRequest(int badRequest) {
-//        SerenityRest.then().statusCode(badRequest);
-//    }
-
     @Given("Post data with file json user id  body request is empty")
     public void postDataWithFileJsonUserIdBodyRequestIsEmpty() {
         File jsonReq = new File(ConstantTodos.JSON_REQUEST_POST + "/PostCreateUserIdEmpty.json");
