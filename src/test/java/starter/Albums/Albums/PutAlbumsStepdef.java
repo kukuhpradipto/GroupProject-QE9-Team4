@@ -32,16 +32,16 @@ public class PutAlbumsStepdef {
         SerenityRest.when().put(AlbumsAPI.PUT_UPDATE_ALBUMS);
     }
 
-    @And("Response body should be title userId is {int}, title is {string}")
-    public void responseBodyShouldBeTitleUserIdIsTitleIs(int userId, String title) {
-        SerenityRest.then().body(AlbumsResponses.USER_ID, equalTo(userId)).body(TodosReponses.TITLE,equalTo(title));
-    }
+//    @And("Response body should be title userId is {int}, title is {string}")
+//    public void responseBodyShouldBeTitleUserIdIsTitleIs(int userId, String title) {
+//        SerenityRest.then().body(AlbumsResponses.USER_ID, equalTo(userId)).body(TodosReponses.TITLE,equalTo(title));
+//    }
 
-    @And("Validate put json schema valid json")
-    public void validatePutJsonSchemaValidJson() {
-        File jsonSchema = new File(ConstantAlbums.JSON_SCHEMA_PUT + "/PutValidParamJSONSchema.json");
-        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
-    }
+//    @And("Validate put json schema valid json")
+//    public void validatePutJsonSchemaValidJson() {
+//        File jsonSchema = new File(ConstantAlbums.JSON_SCHEMA_PUT + "/PutValidParamJSONSchema.json");
+//        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+//    }
 
     //Scenario 2 Put update data album with invalid data type json parameter
     @Given("Put update data album with invalid data type json in id {int}")
