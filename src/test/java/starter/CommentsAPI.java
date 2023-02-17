@@ -35,9 +35,26 @@ public class CommentsAPI {
         SerenityRest.given().pathParam("id", id).contentType(ContentType.JSON).body(json);
     }
 
+    public static String PUT_UPDATE_COMMENTS_INVALID = ConstantComments.BASE_URL+ "/comments/{id}";
+    @Step("Put Update Comments invalid")
+    public void setPutUpdateCommentsInvalid (int id, File json){
+        SerenityRest.given().pathParam("id", id).contentType(ContentType.JSON).body(json);
+    }
+
+    //DELETE COMMENTS
+    public static  String DELETE_COMMENTS = ConstantComments.BASE_URL +"/comments/{id}";
+    @Step("Delete comments")
+    public void setDeleteComments(int id){
+        SerenityRest.given().pathParam("id", id);}
+
+    public static String DELETE_COMMENTS_INVALID = ConstantComments.BASE_URL +"/comments/{id}";
+    @Step("Delete invalid id")
+    public void setDeleteCommentsInvalid(String id){
+        SerenityRest.given().pathParam("id",id);}
+    }
 
 
 
 
 
-}
+
