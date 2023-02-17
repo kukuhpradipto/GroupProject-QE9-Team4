@@ -21,10 +21,10 @@ public class GetSinglePhotosStepDef {
         SerenityRest.when().get(PhotosAPIAutomation.GET_SINGLE_PHOTOS);
     }
 
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int ok) {
-        SerenityRest.then().statusCode(ok);
-    }
+//    @Then("Status code should be {int} OK")
+//    public void statusCodeShouldBeOK(int ok) {
+//        SerenityRest.then().statusCode(ok);
+//    }
 
     //Get single data with unregistered path id
     @Given("Get single data with unregistered path id {int}")
