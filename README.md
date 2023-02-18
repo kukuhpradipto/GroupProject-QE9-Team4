@@ -7,7 +7,7 @@ Team members:
 3. Rizki Kurniawan Rasyid
 4. Adella Rifiandika
 
-Resources: JSONPlaceholder comes with a set of 6 common resources:
+Resources: JSONPlaceholder comes with a set of 4 common resources:
 
 ```java
 /comments	500 comments
