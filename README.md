@@ -53,14 +53,13 @@ The framework has following features
 
 ### Test Results: 77 test scenarios (including 16 rows of test data)
 
-![all test case](https://user-images.githubusercontent.com/114077446/219823559-7d57e4a2-02e6-4aca-95a1-6c2435d03f68.png)
+![all test](https://user-images.githubusercontent.com/114077446/220007860-4b50a690-d5d8-494a-982b-7b5d8fb37023.png)
 
 ### Functional Coverage Overview
 
-![functional coverage](https://user-images.githubusercontent.com/114077446/219823560-97928f15-d627-4942-92b4-77dae714bba7.png)
-
+![func](https://user-images.githubusercontent.com/114077446/220007793-c63bf908-2a0e-49fd-9a3c-dcbc08b035a7.png)
 ### Requirements Overview
 
-![over all overvoew](https://user-images.githubusercontent.com/114077446/219823562-fb03e1e2-7320-4354-a337-dbc87d8f9967.png)
+![req](https://user-images.githubusercontent.com/114077446/220007797-25aa886e-65bd-429d-8fd0-52a476d10876.png)
 
 
