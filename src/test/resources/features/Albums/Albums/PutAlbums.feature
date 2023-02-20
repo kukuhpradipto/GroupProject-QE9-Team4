@@ -6,7 +6,7 @@ Feature: Albums Put Create API Automation Testing
     When Send request put update data album
     Then Response status code should be 200 OK
     And Response body should be title userId is 9, title is "alterra"
-    And Validate put json schema valid json
+    And Validate put json schema valid json albums
 
   @ProjectTeam4 @NegativeCase
   Scenario: Put update data album with invalid data type json parameter

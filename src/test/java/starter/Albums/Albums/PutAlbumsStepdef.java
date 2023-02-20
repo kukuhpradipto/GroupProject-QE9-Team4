@@ -1,4 +1,4 @@
-package starter.Albums;
+package starter.Albums.Albums;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -9,6 +9,7 @@ import net.thucydides.core.annotations.Steps;
 import starter.UtilsAlbums.AlbumsAPI;
 import starter.UtilsAlbums.AlbumsResponses;
 import starter.UtilsAlbums.ConstantAlbums;
+import starter.UtilsTodos.ConstantTodos;
 import starter.UtilsTodos.TodosReponses;
 
 import java.io.File;
@@ -46,5 +47,11 @@ public class PutAlbumsStepdef {
         albumsAPI.putUpdateAlbums(id, jsonReq);
     }
 
+
+    @And("Validate put json schema valid json albums")
+    public void validatePutJsonSchemaValidJsonAlbums() {
+        File jsonSchema = new File(ConstantAlbums.JSON_SCHEMA_PUT + "/PutValidParamJSONSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+    }
 
 }
