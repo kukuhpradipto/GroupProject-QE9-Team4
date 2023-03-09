@@ -9,7 +9,7 @@ Team members:
 
 Resources: JSONPlaceholder comes with a set of 4 common resources:
 
-```java
+```text
 /comments	500 comments
 /albums	        100 albums
 /photos	        5000 photos
@@ -18,7 +18,7 @@ Resources: JSONPlaceholder comes with a set of 4 common resources:
 
 Routes : 
 All HTTP methods are supported. You can use http or https for your requests.
-```java
+```text
 GET	/posts/1
 POST	/posts
 PUT	/posts/1
@@ -38,15 +38,16 @@ The framework has following features
 
 ### Documentation
 
-- List test case in Spreadsheet `https://bit.ly/3Ect0hY`
-- Postman `https://bit.ly/3YCSMUE`
-
-> #### Postman running you can click `Run Collection`
-
-> #### Command line for running this project `mvn clean veerify`
+- [List test case in Spreadsheet](https://bit.ly/3Ect0hY)
+- [Postman](https://bit.ly/3YCSMUE)
+- [Record running the testing](https://youtu.be/DYnOXF1TF9k)
 
 
-#### Record running the testing https://youtu.be/DYnOXF1TF9k
+#### Postman running you can click 
+>`Run Collection`
+
+#### Command line for running this project 
+>`mvn clean veerify`
 
 
 ## Serenity Report
